@@ -1,0 +1,99 @@
+.title {
+    color: white;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-style: oblique;
+}
+
+.project-dashboard {
+    background-color: rgba(30, 30, 35, 0.6);
+    padding: 1.5rem 2rem 3rem 2rem;
+    width: 100%;
+    max-width: 100rem;
+    margin: 3rem auto;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5), inset 0 0 0.5rem rgba(179, 0, 0, 0.1);
+    border: 1px solid rgba(179, 0, 0, 0.747);
+    animation: fadeIn 1s linear;
+}
+
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: #2a2a2f;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-bottom: 4px solid #b30000;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.6);
+    border-bottom-color: #b30000;
+}
+
+.project-card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.project-card-subtitle {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-style: italic;
+    margin-top: 0.25rem;
+}
+
+.project-card-body {
+    padding: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.projbuttons{
+    max-width: 80%;
+    min-width: 60%;
+    margin-top: 1rem;
+    background-color: #b30000;
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border: solid 0.5rem #b30000;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;  
+    text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

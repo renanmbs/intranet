@@ -1,38 +1,219 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #1c1c1e, #2a2a2f);
+  color: white;
+  overflow-x: hidden;
   min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBg 20s linear infinite;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(179, 0, 0, 0.25) 0deg,
+    rgba(179, 0, 0, 0.25) 60deg,
+    rgba(207, 206, 208, 0.15) 120deg,
+    rgba(63, 66, 65, 0.25) 180deg,
+    rgba(63, 66, 65, 0.25) 240deg,
+    rgba(230, 57, 70, 0.3) 300deg,
+    rgba(230, 57, 70, 0.3) 360deg
+  );
+  animation: rotateBg 60s linear infinite;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.hello-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center;   
+  align-items: center;     
+  gap: 2rem;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1; 
+}
+
+.hero-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+  margin: 3rem 0 0 0;
+}
+
+.hello1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: #e63946;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  font-style: italic;
+}
+
+.hello {
+  font-size: clamp(2rem, 6vw, 4rem);
   color: white;
+  font-weight: 700;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-img{
+  width: 80rem;
+  height: auto;
+  animation: logo-bounce 1.2s ease-out forwards;
+  margin: 1rem 0;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.martin-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: transparent;
 }
+.martin-ai {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: transparent;
+}
+
+.search{
+  border: none;
+}
+
+.search:active, .search:focus {
+  border: none;
+  outline: none;
+}
+
+.martin-popup {
+  background: white;
+  color: black;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  white-space: nowrap;
+  animation: fadeIn 0.6s ease;
+  border: transparent;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap; 
+  max-width: 40rem; 
+  width: 100%;
+  justify-content: center;
+}
+
+.outside_buttons > .btn {
+  max-width: 40rem;
+  width: 100%;
+}
+
+.buttons button { 
+  background-color: #b30000; 
+  border: none; 
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+  flex-grow: 1; 
+}
+
+.buttons button:hover {
+  background-color: #b30000b8; 
+  transform: translateY(-2px);
+}
+
+.extra {
+  background-color: transparent; 
+  border: solid 1px #b30000; 
+  padding: 0.75rem 1.5rem; 
+  color: #b30000;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-style: italic; 
+  transition: all 0.5s ease-in-out;
+  display: block;      
+  width: 18.75rem !important;  
+  width: 100%;  
+  margin: 0 auto; 
+}
+
+.extra:hover {
+  color: white; /* Change text to white for high contrast */
+  border-color: white; /* Make the border white for a "lift" effect */
+}
+
+.outside_buttons{
+  gap: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.choices{
+animation: logo-bounce 1.5s linear;
+  position: relative;
+  z-index: 1; 
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logo-bounce {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes moveBg {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1.2); }
+}
+
