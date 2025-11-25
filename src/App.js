@@ -1,7 +1,6 @@
 import './App.css';
 import SplitText from "./bits/BlurText";
 import logo from './image/Monarch3Logo.svg';
-// import martin from './image/martin.png';
 import favicon from './image/favicon.jpg';
 import { useState } from "react";
 import { Layout } from './layout/layout';
@@ -9,11 +8,23 @@ import { Layout } from './layout/layout';
 function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   let handleClick = (event) => {
     setSelectedOption(event.target.value);
-    console.log(event.target.value);
-  }
+    setSearchTerm("");
+    setShowPopup(false);
+  };
+
+  let handleSearch = (event) => {
+    if (event.target.value) {
+      setSelectedOption("All");
+      setSearchTerm(event.target.value);
+    }
+    else {
+      setSelectedOption("");
+    }
+  };
 
   return (
     <div className="hello-container">
@@ -50,11 +61,11 @@ function App() {
 
         <div className="outside_buttons">
           <div className="buttons">
-             <button className="btn" onClick={handleClick} value="Accounting">Accounting</button>
+            <button className="btn" onClick={handleClick} value="Accounting">Accounting</button>
             <button className="btn" onClick={handleClick} value="Estimator">Estimation</button>
             <button className="btn" onClick={handleClick} value="Sales">Sales</button>
             <button className="btn" onClick={handleClick} value="Shop">Shop</button>
-  
+
           </div>
           <button className="btn extra" onClick={handleClick} value="All">Show All</button>
         </div>
@@ -63,18 +74,34 @@ function App() {
       </div>
 
       <div className="martin-container">
+
         {showPopup && <div className="martin-popup">
-          <input type="search" className="search" placeholder="Search..." />
-          </div>}
+          <input
+            type="search"
+            className="search"
+            placeholder="Search Tools..."
+            onChange={handleSearch}
+            onInput={(e) => {
+              if (!e.target.value) {
+                setSearchTerm("");
+                setSelectedOption("");
+              }
+            }}
+            id="search"
+            value={searchTerm}
+          />
+        </div>}
+
         <img
           src={favicon}
           alt="Martin"
           className="martin-ai"
           onClick={() => setShowPopup(!showPopup)}
         />
+
       </div>
 
-      <Layout target={selectedOption} />
+      <Layout target={selectedOption} searchTerm={searchTerm} />
 
     </div>
   );

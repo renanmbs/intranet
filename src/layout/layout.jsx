@@ -1,105 +1,66 @@
 import "./layout.css";
-// import logo from '../image/Monarch3Logo.svg';
-// import { useState } from "react";
+import { projects } from "../projects/projects";
 
-export let Layout = (props) => {
+export let Layout = ({ target, searchTerm }) => {
+    if (!target) return null;
 
-    if (!props.target) {
-        return null;
-    }
+    const getProjectList = () => {
+        if (target === "All") {
+            return Object.keys(projects)
+                .filter(key => key !== "All")
+                .flatMap(key => projects[key]);
+        } else {
+            return projects[target] || [];
+        }
+    };
+
+    const projectList = getProjectList();
+
+    const filteredProjects = projectList.filter((project) => {
+        if (!searchTerm) return true;
+        const term = searchTerm.toLowerCase();
+        return (
+            project.name.toLowerCase().includes(term)
+        );
+    });
 
     return (
-
         <div className="project-dashboard">
-
-            <h1 className="title">{props.target ? `${props.target} Tools` : 'All Projects'}</h1>
+            <h1 className="title">{target ? `${target} Tools` : 'All Projects'}</h1>
 
             <div className="project-card-grid">
+                {filteredProjects.length === 0 ? (
+                    <p>Nothing here yet. Try choosing something else</p>
+                ) : 
+                
+                (
+                    filteredProjects.map((project, index) => (
+                        <div key={index} className="project-card">
+                            <div className="project-card-header">
+                                <h3 className="project-card-title">{project.name}</h3>
+                                {target === "All" && (
+                                    <p className="project-card-subtitle">{project.subtitle}</p>
+                                )}
+                            </div>
 
-                {/* Example Card Structure */}
-                <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Z Clip Configurator</h3>
-                        {/* <p className="project-card-subtitle">Estimators / Q3 2025</p> */}
-                    </div>
-                    <div className="project-card-body">
-                        <p>This tool is for custom Z Clips. Calculates pricing, Z Clip configuration and drawing </p>
-                        <a href="https://www.google.com"  target="_blank" rel="noopener noreferrer"><button className="projbuttons">
-                            Open
-                        </button></a>
-                    </div>
-                </div>
+                            <div className="project-card-body">
+                                <p>{project.description}</p>
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="proj-buttons"
+                                >
+                                    Open
+                                </a>
+                            </div>
 
-                <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Tool 1</h3>
-                        {/* <p className="project-card-subtitle"></p> */}
-                    </div>
-                    <div className="project-card-body">
-                        <p>This is an Example</p>
-                        <button className="projbuttons">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                 <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Tool 2</h3>
-                        <p className="project-card-subtitle">Subtitle (if needed)</p>
-                    </div>
-                    <div className="project-card-body">
-                        <p>This is an Example</p>
-                        <button className="projbuttons">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                 <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Tool 3</h3>
-                        <p className="project-card-subtitle"></p>
-                    </div>
-                    <div className="project-card-body">
-                        <p>This is an Example</p>
-                        <button className="projbuttons">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                 <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Tool 4</h3>
-                        <p className="project-card-subtitle"></p>
-                    </div>
-                    <div className="project-card-body">
-                        <p>This is an Example</p>
-                        <button className="projbuttons">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                 <div className="project-card">
-                    <div className="project-card-header">
-                        <h3 className="project-card-title">Tool 5</h3>
-                        <p className="project-card-subtitle"></p>
-                    </div>
-                    <div className="project-card-body">
-                        <p>This is an Example</p>
-                        <button className="projbuttons">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-
-                {/* ... more cards ... */}
-
+                        </div>
+                    ))
+                )}
+                
             </div>
-
         </div>
+    );
+};
 
-    )
-}
