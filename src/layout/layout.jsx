@@ -26,39 +26,45 @@ export let Layout = ({ target, searchTerm }) => {
 
     return (
         <div className="project-dashboard">
-            <h1 className="title">{target ? `${target} Tools` : 'All Projects'}</h1>
+            <h1 className="title">
+                {target === "Estimator"
+                    ? "Customer Support Tools"
+                    : target
+                        ? `${target} Tools`
+                        : "All Projects"}
+            </h1>
 
             <div className="project-card-grid">
                 {filteredProjects.length === 0 ? (
                     <p>Nothing here yet. Try choosing something else</p>
-                ) : 
-                
-                (
-                    filteredProjects.map((project, index) => (
-                        <div key={index} className="project-card">
-                            <div className="project-card-header">
-                                <h3 className="project-card-title">{project.name}</h3>
-                                {target === "All" && (
-                                    <p className="project-card-subtitle">{project.subtitle}</p>
-                                )}
-                            </div>
+                ) :
 
-                            <div className="project-card-body">
-                                <p>{project.description}</p>
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="proj-buttons"
-                                >
-                                    Open
-                                </a>
-                            </div>
+                    (
+                        filteredProjects.map((project, index) => (
+                            <div key={index} className="project-card">
+                                <div className="project-card-header">
+                                    <h3 className="project-card-title">{project.name}</h3>
+                                    {target === "All" && (
+                                        <p className="project-card-subtitle">{project.subtitle}</p>
+                                    )}
+                                </div>
 
-                        </div>
-                    ))
-                )}
-                
+                                <div className="project-card-body">
+                                    <p>{project.description}</p>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="proj-buttons"
+                                    >
+                                        Open
+                                    </a>
+                                </div>
+
+                            </div>
+                        ))
+                    )}
+
             </div>
         </div>
     );

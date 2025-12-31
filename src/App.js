@@ -62,7 +62,7 @@ function App() {
         <div className="outside_buttons">
           <div className="buttons">
             <button className="btn" onClick={handleClick} value="Accounting">Accounting</button>
-            <button className="btn" onClick={handleClick} value="Estimator">Estimation</button>
+            <button className="btn" onClick={handleClick} value="Estimator">Customer Support</button>
             <button className="btn" onClick={handleClick} value="Sales">Sales</button>
             <button className="btn" onClick={handleClick} value="Shop">Shop</button>
 
