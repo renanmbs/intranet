@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(135deg, #1c1c1e, #2a2a2f);
+  background: linear-gradient(135deg, white, #333B41);
   color: white;
   overflow-x: hidden;
   min-height: 100vh;
@@ -61,7 +61,7 @@ body::after {
 
 .hello1 {
   font-size: clamp(1.5rem, 4vw, 2rem);
-  color: #e63946;
+  color: #C31F27;
   font-weight: 700;
   margin: 0 0 0.3rem 0;
   font-style: italic;
@@ -69,14 +69,14 @@ body::after {
 
 .hello {
   font-size: clamp(2rem, 6vw, 4rem);
-  color: white;
+  color: #333B41;
   font-weight: 700;
   margin: 0;
 }
 
 .logo-img{
-  width: 80rem;
-  height: auto;
+  width: 40rem;
+  height: 8rem;
   animation: logo-bounce 1.2s ease-out forwards;
   margin: 1rem 0;
   z-index: 1;
@@ -129,22 +129,22 @@ body::after {
   gap: 1rem;
   margin: 0.5rem 0;
   flex-wrap: wrap; 
-  max-width: 40rem; 
+  max-width: 50rem; 
   width: 100%;
   justify-content: center;
 }
 
 .outside_buttons > .btn {
-  max-width: 40rem;
+  max-width: 50rem;
   width: 100%;
 }
 
 .buttons button { 
-  background-color: #b30000; 
+  background-color: #333B41; 
   border: none; 
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
@@ -154,16 +154,16 @@ body::after {
 }
 
 .buttons button:hover {
-  background-color: #b30000b8; 
+  background-color: #333b41d3; 
   transform: translateY(-2px);
 }
 
 .extra {
-  background-color: transparent; 
-  border: solid 1px #b30000; 
-  padding: 0.75rem 1.5rem; 
-  color: #b30000;
-  font-size: 1.3rem;
+  background-color: #c31f27e1; 
+  border: solid 1px transparent;
+  padding: 0.75rem 2rem; 
+  color: white;
+  font-size: 1.8rem;
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
@@ -179,6 +179,7 @@ body::after {
 .extra:hover {
   color: white; /* Change text to white for high contrast */
   border-color: white; /* Make the border white for a "lift" effect */
+  background-color: #c31f27ce;
 }
 
 .outside_buttons{
@@ -195,6 +196,9 @@ animation: logo-bounce 1.5s linear;
   z-index: 1; 
 }
 
+.choices p{
+  font-size: 1.3rem;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
