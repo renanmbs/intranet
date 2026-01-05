@@ -15,7 +15,7 @@
     margin: 3rem auto;
     border-radius: 8px;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5), inset 0 0 0.5rem rgba(179, 0, 0, 0.1);
-    border: 1px solid rgba(179, 0, 0, 0.747);
+    border: 1px solid #c31f278d;
     animation: fadeIn 1s linear;
 }
 
@@ -33,14 +33,14 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border-bottom: 4px solid #b30000;
+    border-bottom: 4px solid #c31f27a5;
     cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.6);
-    border-bottom-color: #b30000;
+    border-bottom-color: #C31F27;
 }
 
 .project-card-header {
@@ -73,7 +73,7 @@
     display: block;                
     width: 70%;                  
     margin: 1rem auto 0 auto;   
-    background-color: #b30000;
+    background-color: #c31f27de;
     color: white;
     font-style: italic;
     font-weight: 600;
@@ -88,7 +88,7 @@
 }
 
 .proj-buttons:hover {
-    background-color: #b30000b8; 
+    background-color: #c31f27a5; 
 }
 
 @keyframes fadeIn {
