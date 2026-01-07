@@ -27,83 +27,84 @@ function App() {
   };
 
   return (
-    <div className="hello-container">
-      <img src={logo} alt="Monarch Logo" className="logo-img" />
+    // <div className="hello-container">
+    //   <img src={logo} alt="Monarch Logo" className="logo-img" />
 
-      <div className="hero-text">
-        <SplitText
-          text="WELCOME,"
-          className="hello1"
-          tag="h2"
-          delay={100}
-          duration={0.9}
-          ease="power3.out"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          textAlign="left"
-        />
+    //   <div className="hero-text">
+    //     <SplitText
+    //       text="WELCOME,"
+    //       className="hello1"
+    //       tag="h2"
+    //       delay={100}
+    //       duration={0.9}
+    //       ease="power3.out"
+    //       from={{ opacity: 0, y: 40 }}
+    //       to={{ opacity: 1, y: 0 }}
+    //       textAlign="left"
+    //     />
 
-        <SplitText
-          text="To The Monarch Metal Intranet App!"
-          className="hello"
-          tag="h1"
-          delay={50}
-          duration={0.7}
-          ease="power3.out"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          textAlign="center"
-        />
-      </div>
+    //     <SplitText
+    //       text="To The Monarch Metal Intranet App!"
+    //       className="hello"
+    //       tag="h1"
+    //       delay={50}
+    //       duration={0.7}
+    //       ease="power3.out"
+    //       from={{ opacity: 0, y: 40 }}
+    //       to={{ opacity: 1, y: 0 }}
+    //       textAlign="center"
+    //     />
+    //   </div>
 
-      <div className="choices">
-        <p>Please Select An Option</p>
+    //   <div className="choices">
+    //     <p>Please Select An Option</p>
 
-        <div className="outside_buttons">
-          <div className="buttons">
-            <button className="btn" onClick={handleClick} value="Accounting">Accounting</button>
-            <button className="btn" onClick={handleClick} value="Estimator">Customer Support</button>
-            <button className="btn" onClick={handleClick} value="Sales">Sales</button>
-            <button className="btn" onClick={handleClick} value="Shop">Shop</button>
+    //     <div className="outside_buttons">
+    //       <div className="buttons">
+    //         <button className="btn" onClick={handleClick} value="Accounting">Accounting</button>
+    //         <button className="btn" onClick={handleClick} value="Estimator">Customer Support</button>
+    //         <button className="btn" onClick={handleClick} value="Sales">Sales</button>
+    //         <button className="btn" onClick={handleClick} value="Shop">Shop</button>
 
-          </div>
-          <button className="btn extra" onClick={handleClick} value="All">Show All</button>
-        </div>
+    //       </div>
+    //       <button className="btn extra" onClick={handleClick} value="All">Show All</button>
+    //     </div>
 
 
-      </div>
+    //   </div>
 
-      <div className="martin-container">
+    //   <div className="martin-container">
 
-        {showPopup && <div className="martin-popup">
-          <input
-            type="search"
-            className="search"
-            placeholder="Search Tools..."
-            onChange={handleSearch}
-            onInput={(e) => {
-              if (!e.target.value) {
-                setSearchTerm("");
-                setSelectedOption("");
-              }
-            }}
-            id="search"
-            value={searchTerm}
-          />
-        </div>}
+    //     {showPopup && <div className="martin-popup">
+    //       <input
+    //         type="search"
+    //         className="search"
+    //         placeholder="Search Tools..."
+    //         onChange={handleSearch}
+    //         onInput={(e) => {
+    //           if (!e.target.value) {
+    //             setSearchTerm("");
+    //             setSelectedOption("");
+    //           }
+    //         }}
+    //         id="search"
+    //         value={searchTerm}
+    //       />
+    //     </div>}
 
-        <img
-          src={favicon}
-          alt="Martin"
-          className="martin-ai"
-          onClick={() => setShowPopup(!showPopup)}
-        />
+    //     <img
+    //       src={favicon}
+    //       alt="Martin"
+    //       className="martin-ai"
+    //       onClick={() => setShowPopup(!showPopup)}
+    //     />
 
-      </div>
+    //   </div>
 
-      <Layout target={selectedOption} searchTerm={searchTerm} />
+    //   <Layout target={selectedOption} searchTerm={searchTerm} />
 
-    </div>
+    // </div>
+    <h1>Website under maintenance</h1>
   );
 }
 
