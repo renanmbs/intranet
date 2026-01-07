@@ -1,30 +1,30 @@
 import './App.css';
-import SplitText from "./bits/BlurText";
-import logo from './image/Monarch3Logo.svg';
-import favicon from './image/favicon.jpg';
-import { useState } from "react";
-import { Layout } from './layout/layout';
+// import SplitText from "./bits/BlurText";
+// import logo from './image/Monarch3Logo.svg';
+// import favicon from './image/favicon.jpg';
+// import { useState } from "react";
+// import { Layout } from './layout/layout';
 
 function App() {
-  const [showPopup, setShowPopup] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [showPopup, setShowPopup] = useState(false);
+  // const [selectedOption, setSelectedOption] = useState("");
+  // const [searchTerm, setSearchTerm] = useState("");
 
-  let handleClick = (event) => {
-    setSelectedOption(event.target.value);
-    setSearchTerm("");
-    setShowPopup(false);
-  };
+  // let handleClick = (event) => {
+  //   setSelectedOption(event.target.value);
+  //   setSearchTerm("");
+  //   setShowPopup(false);
+  // };
 
-  let handleSearch = (event) => {
-    if (event.target.value) {
-      setSelectedOption("All");
-      setSearchTerm(event.target.value);
-    }
-    else {
-      setSelectedOption("");
-    }
-  };
+  // let handleSearch = (event) => {
+  //   if (event.target.value) {
+  //     setSelectedOption("All");
+  //     setSearchTerm(event.target.value);
+  //   }
+  //   else {
+  //     setSelectedOption("");
+  //   }
+  // };
 
   return (
     // <div className="hello-container">
