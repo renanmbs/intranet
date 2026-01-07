@@ -104,7 +104,11 @@ function App() {
     //   <Layout target={selectedOption} searchTerm={searchTerm} />
 
     // </div>
-    <h1>Website under maintenance</h1>
+    <div>
+      <h1>Website Under Maintenance</h1>
+      <p>We will be back next week!</p>
+    </div>
+
   );
 }
 
