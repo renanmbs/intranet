@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
-
+/* 
 body::before {
   content: "";
   position: fixed;
@@ -174,11 +174,11 @@ body::after {
   width: 18.75rem !important;  
   width: 100%;  
   margin: 0 auto; 
-}
-
+} */
+/* 
 .extra:hover {
-  color: white; /* Change text to white for high contrast */
-  border-color: white; /* Make the border white for a "lift" effect */
+  color: white;
+  border-color: white;
   background-color: #c31f27ce;
 }
 
@@ -220,4 +220,4 @@ animation: logo-bounce 1.5s linear;
   0% { transform: rotate(0deg) scale(1.2); }
   100% { transform: rotate(360deg) scale(1.2); }
 }
-
+ */
