@@ -86,6 +86,12 @@ function App() {
     <div className="hello-container">
       <img src={logo} alt="Monarch Logo" className="logo-img" />
 
+      <div className="top-bar">
+        <button onClick={logout} className="logout-btn">
+          Log out
+        </button>
+      </div>
+
       <div className="hero-text">
         <SplitText
           text="WELCOME,"
