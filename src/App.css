@@ -35,9 +35,11 @@ p {
 }
 
 .logout-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: #c31f27; /* Monarch Red on hover */
+  color: white;
+  border-color: #c31f27;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(195, 31, 39, 0.2);
 }
 
 .logout-btn:active {
@@ -267,6 +269,20 @@ body::after {
   animation: fadeUp 0.8s ease forwards;
 }
 
+.auth-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  /* Hard-code the spacing to prevent inherited overrides */
+  letter-spacing: 0.5px !important; 
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .auth-hero {
   margin-bottom: 2.5rem;
 }
@@ -335,13 +351,6 @@ body::after {
 .auth-secondary:hover {
   background: rgba(255, 255, 255, 0.06);
   color: white;
-}
-
-
-.auth-title {
-  font-size: clamp(2.2rem, 5vw, 2.8rem);
-  font-weight: 800;
-  margin: 0;
 }
 
 .auth-subtitle {

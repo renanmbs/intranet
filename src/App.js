@@ -50,7 +50,7 @@ function App() {
 
           <div className="auth-hero">
             {/* <h1 className="auth-title">Monarch Metal</h1> */}
-            <p className="auth-subtitle">
+            <p className="auth-title">
               Internal tools
             </p>
           </div>
