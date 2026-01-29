@@ -352,7 +352,7 @@ body::after {
   width: auto;
   height: 12rem;
   margin-bottom: 0rem;
-  animation: subtleFloat 4s ease-in-out infinite;
+  /* animation: subtleFloat 4s ease-in-out infinite; */
 }
 
 @keyframes fadeIn {
