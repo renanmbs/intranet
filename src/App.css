@@ -260,7 +260,10 @@ body::after {
   border-radius: 20px;
   padding: 3rem 3.5rem;
   max-width: 480px;
-  width: 100%;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
   animation: fadeUp 0.8s ease forwards;
 }
 
