@@ -338,7 +338,6 @@ body::after {
 .auth-title {
   font-size: clamp(2.2rem, 5vw, 2.8rem);
   font-weight: 800;
-  letter-spacing: 0.04em;
   margin: 0;
 }
 
