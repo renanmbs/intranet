@@ -59,7 +59,7 @@ function App() {
             <button className="btn auth-primary" onClick={login}>
               Sign In
             </button>
-            <button
+            {/* <button
               className="btn auth-secondary"
               onClick={() => {
                 window.location.href =
@@ -69,7 +69,7 @@ function App() {
               }}
             >
               Request Access
-            </button>
+            </button> */}
           </div>
 
           <p className="auth-footnote">
