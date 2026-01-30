@@ -6,9 +6,14 @@ export let Layout = ({ target, searchTerm }) => {
 
     const getProjectList = () => {
         if (target === "All") {
-            return Object.keys(projects)
+            const allProjects = Object.keys(projects)
                 .filter(key => key !== "All")
                 .flatMap(key => projects[key]);
+
+            // REMOVE DUPLICATES: Keep only the first instance of a tool found
+            return allProjects.filter((project, index, self) =>
+                index === self.findIndex((p) => p.name === project.name)
+            );
         } else {
             return projects[target] || [];
         }
@@ -40,8 +45,8 @@ export let Layout = ({ target, searchTerm }) => {
                 ) :
 
                     (
-                        filteredProjects.map((project, index) => (
-                            <div key={index} className="project-card">
+                        filteredProjects.map((project) => (
+                            <div key={project.name} className="project-card">
                                 <div className="project-card-header">
                                     <h3 className="project-card-title">{project.name}</h3>
                                     {target === "All" && (

@@ -21,7 +21,7 @@ export let projects = {
             description: "Check carrier cutoff times by warehouse and compare shipping options.",
             link: "https://monarchcutoffdashboard.netlify.app/"
         },
-          {
+        {
             name: "Shipping Location by State",
             subtitle: "Sales/Customer Support Tool",
             description: "See Sales Representative by State and Shipping Location by State maps.",
@@ -30,13 +30,26 @@ export let projects = {
     ],
 
     Sales: [
-         {
+        {
             name: "Sales Representative by State",
             subtitle: "Sales/Customer Support Tool",
             description: "See Sales Representative by State and Shipping Map.",
             link: "https://monarchmaps.netlify.app/"
+        },
+        {
+            name: "Linear Cutting List Optimizer",
+            subtitle: "Sales/Shop Tool",
+            description: "Optimize cutting lists for linear materials.",
+            link: "https://monarchlinear.netlify.app/"
         }
     ],
 
-    Shop: []
+    Shop: [
+        {
+            name: "Linear Cutting List Optimizer",
+            subtitle: "Sales/Shop Tool",
+            description: "Optimize cutting lists for linear materials.",
+            link: "https://monarchlinear.netlify.app/"
+        }
+    ]
 }
